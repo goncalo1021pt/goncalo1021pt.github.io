@@ -4,6 +4,15 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-x: hidden;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
 :root {
     --primary-color: #8b5cf6;
     --secondary-color: #7c3aed;
@@ -49,6 +58,7 @@ nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 nav .logo {
@@ -532,36 +542,68 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    nav .container {
+        padding: 0.75rem 1rem;
+        gap: 0.5rem;
+    }
+
+    nav .logo {
+        font-size: 1.2rem;
+    }
+
     nav ul {
-        gap: 1rem;
-        font-size: 0.9rem;
+        gap: 0.5rem;
+        font-size: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 0.85rem;
     }
 
     .theme-toggle {
-        padding: 0.3rem;
+        padding: 0.25rem;
     }
 
     .theme-toggle-btn {
         width: 1.5rem;
         height: 1.5rem;
-        font-size: 0.875rem;
+        font-size: 0.75rem;
+    }
+
+    .container {
+        padding: 0 1rem;
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
     .hero .subtitle {
-        font-size: 1.2rem;
+        font-size: 1rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
     }
 
     section h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+
+    section {
+        padding: 3rem 0;
     }
 
     .btn-group {
         flex-direction: column;
         align-items: center;
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .timeline::before {
@@ -582,5 +624,17 @@ footer {
         left: -15px;
         border-right: 15px solid var(--border-color);
         border-left: none;
+    }
+
+    .contact-links {
+        gap: 1rem;
+    }
+
+    .contact-link {
+        font-size: 0.95rem;
+    }
+
+    .projects-count {
+        font-size: 1rem;
     }
 }
