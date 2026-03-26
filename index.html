@@ -73,13 +73,15 @@
                         <li>Memory Management</li>
                         <li>Network Programming</li>
                         <li>Unix/Linux Systems</li>
+                        <li>Valgrind</li>
+                        <li>Wireshark</li>
                     </ul>
                 </div>
                 <div class="skill-card">
                     <h3>Languages</h3>
                     <ul>
                         <li>Python</li>
-                        <li>C#</li>
+                        <li>Go</li>
                         <li>Java</li>
                         <li>JavaScript/TypeScript</li>
                         <li>Bash</li>
@@ -91,8 +93,8 @@
                         <li>Docker</li>
                         <li>Git & GitHub</li>
                         <li>Linux</li>
-                        <li>Unity</li>
-                        <li>VS Code</li>
+                        <li>Kubernetes</li>
+                        <li>React</li>
                     </ul>
                 </div>
             </div>
@@ -160,64 +162,319 @@
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2>Featured Projects</h2>
-            <p class="section-subtitle">Some of my work from 42 and beyond</p>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/C_logo.png" alt="C Logo" style="width: 80px; height: 90px;">
-                        <!-- <svg width="100" height="100" viewBox="0 0 100 100">
-                            <circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="4"/>
-                            <text x="50" y="65" font-family="Arial, sans-serif" font-size="50" font-weight="bold" fill="white" text-anchor="middle">C</text>
-                        </svg> -->
-                    </div>
-                    <div class="project-content">
-                        <h3>malloc</h3>
-                        <p>Custom implementation of malloc, free, and realloc. Deep dive into memory management, addressing, and allocation strategies with optimized performance.</p>
-                        <div class="project-tags">
-                            <span class="tag">C</span>
-                            <span class="tag">Memory Management</span>
-                            <span class="tag">Algorithms</span>
+            <h2>My Projects</h2>
+            <p class="section-subtitle">Organized by specialization and timeline - 30+ repositories</p>
+
+            <!-- Specialization Phase Projects -->
+            <div class="projects-subsection">
+                <h3 class="subsection-title">🚀 Specialization Phase <span class="status-badge status-active">Active</span></h3>
+                <p class="subsection-subtitle">Network programming, systems development, and advanced C/C++</p>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>inception-of-things</h4>
+                            <span class="status-badge status-active">Active</span>
                         </div>
-                        <a href="https://github.com/goncalo1021pt/malloc" target="_blank" class="btn btn-outline">View Project</a>
+                        <p class="project-description">Kubernetes exploration project learning container orchestration and modern DevOps practices with k3d clusters and Vagrant.</p>
+                        <div class="project-tags">
+                            <span class="tag">Kubernetes</span>
+                            <span class="tag">Vagrant</span>
+                            <span class="tag">DevOps</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/inception-of-things" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/C_logo.png" alt="C Logo" style="width: 80px; height: 90px;">
-                    </div>
-                    <div class="project-content">
-                        <h3>ft_ping</h3>
-                        <p>Recreation of the ping command using raw sockets and ICMP protocol. Implements network diagnostics with packet timing and statistics.</p>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>ft_ping</h4>
+                            <span class="status-badge status-completed">Completed</span>
+                        </div>
+                        <p class="project-description">Recreation of the Linux ping command using raw sockets and ICMP protocol. Implements network diagnostics with packet timing and statistics.</p>
                         <div class="project-tags">
                             <span class="tag">C</span>
                             <span class="tag">Network Programming</span>
                             <span class="tag">ICMP</span>
                         </div>
-                        <a href="https://github.com/goncalo1021pt/ft_ping" target="_blank" class="btn btn-outline">View Project</a>
+                        <a href="https://github.com/goncalo1021pt/ft_ping" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
                     </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #3776ab 0%, #f7df1e 100%);">
-                        <div style="display: flex; flex-direction: column; align-items: center;">
-                            <img src="assets/Django_logo.png" alt="Django Logo" style="width: 80px; height: 80px; margin-bottom: 0.5rem;">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>ft_traceroute</h4>
+                            <span class="status-badge status-completed">Completed</span>
                         </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>ft_transcendence</h3>
-                        <p>Full-stack web application featuring real-time multiplayer Pong game, user authentication, chat system, and Docker orchestration.</p>
+                        <p class="project-description">Implementation of the traceroute Unix command for network path discovery and DNS resolution analysis.</p>
                         <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Docker</span>
+                            <span class="tag">C</span>
+                            <span class="tag">Network Programming</span>
+                            <span class="tag">UDP/ICMP</span>
                         </div>
-                        <a href="https://github.com/goncalo1021pt/ft_transcendence" target="_blank" class="btn btn-outline">View Project</a>
+                        <a href="https://github.com/goncalo1021pt/ft_traceroute" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>malloc</h4>
+                            <span class="status-badge status-completed">Completed</span>
+                        </div>
+                        <p class="project-description">Custom implementation of malloc, free, and realloc. Deep dive into memory management, heap allocation strategies, and optimization.</p>
+                        <div class="project-tags">
+                            <span class="tag">C</span>
+                            <span class="tag">Memory Management</span>
+                            <span class="tag">Performance</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/malloc" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>libasm</h4>
+                            <span class="status-badge status-completed">Completed</span>
+                        </div>
+                        <p class="project-description">Assembly language library implementing core libc functions in x86-64 assembly for deep understanding of CPU operations.</p>
+                        <div class="project-tags">
+                            <span class="tag">Assembly</span>
+                            <span class="tag">x86-64</span>
+                            <span class="tag">Low-Level</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/libasm" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>ls</h4>
+                            <span class="status-badge status-completed">Completed</span>
+                        </div>
+                        <p class="project-description">Custom implementation of the ls command with directory listing, file sorting, and Unix permissions display.</p>
+                        <div class="project-tags">
+                            <span class="tag">C</span>
+                            <span class="tag">Unix</span>
+                            <span class="tag">System Tools</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/ls" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
                     </div>
                 </div>
             </div>
+
+            <!-- Cybersecurity Specialization -->
+            <div class="projects-subsection">
+                <h3 class="subsection-title">🔐 Cybersecurity Specialization <span class="status-badge status-active">Active</span></h3>
+                <p class="subsection-subtitle">Security research, cryptography, and penetration testing projects</p>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>Inquisitor</h4>
+                            <span class="status-badge status-active">Active</span>
+                        </div>
+                        <p class="project-description">Advanced security and systems research project exploring modern attack vectors and defensive mechanisms.</p>
+                        <div class="project-tags">
+                            <span class="tag">Go</span>
+                            <span class="tag">Security</span>
+                            <span class="tag">Research</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/Inquisitor" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>ft_otp</h4>
+                            <span class="status-badge status-completed">Completed</span>
+                        </div>
+                        <p class="project-description">One-Time Password generator and authentication system using cryptographic protocols and TOTP implementation.</p>
+                        <div class="project-tags">
+                            <span class="tag">Go</span>
+                            <span class="tag">Cryptography</span>
+                            <span class="tag">Authentication</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/ft_otp" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>ft_onion</h4>
+                            <span class="status-badge status-completed">Completed</span>
+                        </div>
+                        <p class="project-description">Tor-inspired onion routing container deployment exploring anonymous network communication and privacy protocols.</p>
+                        <div class="project-tags">
+                            <span class="tag">Docker</span>
+                            <span class="tag">Tor</span>
+                            <span class="tag">Containers</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/ft_onion" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>Arachnida</h4>
+                            <span class="status-badge status-completed">Completed</span>
+                        </div>
+                        <p class="project-description">Web scraper and data extraction tool for cybersecurity analysis, reconnaissance, and information gathering.</p>
+                        <div class="project-tags">
+                            <span class="tag">Rust</span>
+                            <span class="tag">Web Scraping</span>
+                            <span class="tag">Reconnaissance</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/Arachnida" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>Stockholm</h4>
+                            <span class="status-badge status-backlog">Backlog</span>
+                        </div>
+                        <p class="project-description">Encryption/decryption tool exploring reversible cryptographic transformations and data security mechanisms.</p>
+                        <div class="project-tags">
+                            <span class="tag">Cryptography</span>
+                            <span class="tag">Security</span>
+                            <span class="tag">TBD</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/Stockholm" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>rev_me</h4>
+                            <span class="status-badge status-completed">Completed</span>
+                        </div>
+                        <p class="project-description">Reverse engineering challenge and binary analysis. Techniques for understanding compiled code and exploitation.</p>
+                        <div class="project-tags">
+                            <span class="tag">Reverse Engineering</span>
+                            <span class="tag">Security</span>
+                            <span class="tag">Binary Analysis</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/rev_me" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>Piscine Cybersecurity</h4>
+                            <span class="status-badge status-completed">Completed</span>
+                        </div>
+                        <p class="project-description">Intensive cybersecurity bootcamp covering vulnerability analysis, exploitation, and defensive strategies.</p>
+                        <div class="project-tags">
+                            <span class="tag">Cybersecurity</span>
+                            <span class="tag">Training</span>
+                            <span class="tag">Penetration Testing</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/Piscine_Cybersecurity" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Common Core Highlights -->
+            <div class="projects-subsection">
+                <h3 class="subsection-title">🎓 Common Core Highlights <span class="status-badge status-completed">Completed</span></h3>
+                <p class="subsection-subtitle">Major 42 projects demonstrating mastery of systems and web development</p>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>ft_transcendence</h4>
+                            <span class="status-badge status-completed">Completed</span>
+                        </div>
+                        <p class="project-description">Full-stack web application featuring real-time multiplayer Pong game, user authentication, chat system, and microservices with Docker.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python/Django</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">WebSocket</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/ft_transcendence" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>Minishell</h4>
+                            <span class="status-badge status-completed">Completed</span>
+                        </div>
+                        <p class="project-description">Fully functional shell implementation with pipes, redirects, built-ins, and signal handling. Group project exploring Unix process management.</p>
+                        <div class="project-tags">
+                            <span class="tag">C</span>
+                            <span class="tag">Shell</span>
+                            <span class="tag">Unix/Linux</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/Minishell" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>cub3d</h4>
+                            <span class="status-badge status-completed">Completed</span>
+                        </div>
+                        <p class="project-description">3D raycasting engine inspired by classic Wolfenstein 3D. Real-time 3D graphics, texture mapping, and optimized rendering.</p>
+                        <div class="project-tags">
+                            <span class="tag">C</span>
+                            <span class="tag">3D Graphics</span>
+                            <span class="tag">Raycasting</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/cub3d" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>inception</h4>
+                            <span class="status-badge status-completed">Completed</span>
+                        </div>
+                        <p class="project-description">Docker and Docker Compose infrastructure project. Multi-container setup with MariaDB, Nginx, and WordPress orchestration.</p>
+                        <div class="project-tags">
+                            <span class="tag">Docker</span>
+                            <span class="tag">Compose</span>
+                            <span class="tag">DevOps</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/inception" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal & Creative Projects -->
+            <div class="projects-subsection">
+                <h3 class="subsection-title">🎮 Personal & Creative <span class="status-badge status-active">Active</span></h3>
+                <p class="subsection-subtitle">Personal projects, experiments, and creative explorations</p>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>Voting</h4>
+                            <span class="status-badge status-active">Active</span>
+                        </div>
+                        <p class="project-description">Web application for creating and managing voting pools. Full-featured voting system with real-time results and user management. Go backend with JavaScript/React frontend.</p>
+                        <div class="project-tags">
+                            <span class="tag">Go</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">React</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/Voting" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>ReadLine</h4>
+                            <span class="status-badge status-backlog">Backlog</span>
+                        </div>
+                        <p class="project-description">Implementation of GNU ReadLine library features for command-line editing and history management. To be completed later.</p>
+                        <div class="project-tags">
+                            <span class="tag">C</span>
+                            <span class="tag">Terminal</span>
+                            <span class="tag">Line Editing</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/readLine" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>blackout</h4>
+                            <span class="status-badge status-backlog">Backlog</span>
+                        </div>
+                        <p class="project-description">A fun puzzle game side project exploring game mechanics and interactive entertainment with Django backend and React frontend. Will be restructured to Flask or Go.</p>
+                        <div class="project-tags">
+                            <span class="tag">Django</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Game Dev</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/blackout" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h4>hackmud</h4>
+                            <span class="status-badge status-backlog">Backlog</span>
+                        </div>
+                        <p class="project-description">Cyberpunk-themed hacking game and exploration project. A creative experiment built with JavaScript.</p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Game</span>
+                            <span class="tag">Interactive</span>
+                        </div>
+                        <a href="https://github.com/goncalo1021pt/hackmud" target="_blank" class="btn btn-outline btn-small">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View More CTA -->
             <div class="projects-cta">
-                <p class="projects-count">🚀 20+ projects and counting on GitHub</p>
-                <a href="https://github.com/goncalo1021pt?tab=repositories" target="_blank" class="btn">View All Projects on GitHub</a>
+                <p class="projects-count">📚 30+ projects and counting on my GitHub</p>
+                <a href="https://github.com/goncalo1021pt?tab=repositories" target="_blank" class="btn">Explore All Projects</a>
             </div>
         </div>
     </section>
