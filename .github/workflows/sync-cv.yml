@@ -1,0 +1,86 @@
+# Pulls the compiled CV out of goncalo1021pt/CV whenever that repo says it has
+# a new one, so the copy served at goncalo.fontao.net/CV.pdf never has to be
+# dragged across by hand.
+#
+# The CV repo sends a repository_dispatch after its build job passes, which
+# means anything landing here has already survived scripts/build.sh. The commit
+# it was verified at rides along in the payload and is what gets downloaded:
+# pinning the SHA keeps a later push to the CV repo from sneaking an unverified
+# PDF in behind this run.
+name: Sync CV
+
+on:
+  repository_dispatch:
+    types: [cv-updated]
+  # Lets you pull the current main by hand, which is also how you recover if a
+  # dispatch is ever missed.
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Two syncs pushing to main at once would just make one of them fail on a
+# stale ref. Queue them instead.
+concurrency:
+  group: sync-cv
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    name: Fetch and commit CV.pdf
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out
+        uses: actions/checkout@v7
+
+      - name: Work out which commit to take the CV from
+        id: source
+        run: |
+          # workflow_dispatch has no payload, so fall back to whatever main
+          # currently holds.
+          ref="${{ github.event.client_payload.sha }}"
+          echo "ref=${ref:-main}" >> "$GITHUB_OUTPUT"
+
+      - name: Download cv.pdf
+        env:
+          REF: ${{ steps.source.outputs.ref }}
+        run: |
+          set -euo pipefail
+          curl --fail --silent --show-error --location \
+            --output cv-incoming.pdf \
+            "https://raw.githubusercontent.com/goncalo1021pt/CV/${REF}/cv.pdf"
+
+          # --fail catches an HTTP error, but a proxy or a redirect to a login
+          # page can still hand back a 200 full of HTML. Committing that would
+          # replace the CV with something browsers refuse to open, so check the
+          # magic bytes before overwriting anything.
+          if [ "$(head --bytes=5 cv-incoming.pdf)" != '%PDF-' ]; then
+            echo "Downloaded file is not a PDF:" >&2
+            head --bytes=200 cv-incoming.pdf >&2
+            exit 1
+          fi
+
+          mv cv-incoming.pdf CV.pdf
+
+      - name: Commit if it actually changed
+        env:
+          REF: ${{ steps.source.outputs.ref }}
+        run: |
+          set -euo pipefail
+
+          # The CV repo dispatches on every push to main that touches cv.pdf,
+          # and a rebuild can produce byte-identical output. No diff, no commit,
+          # no pointless Pages rebuild.
+          if git diff --quiet -- CV.pdf; then
+            echo "CV.pdf is already up to date." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add CV.pdf
+          git commit -m "Update CV.pdf from CV@$(printf '%.7s' "$REF")"
+          git push
+
+          echo "Published a new CV.pdf from CV@${REF}." >> "$GITHUB_STEP_SUMMARY"
